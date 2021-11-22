@@ -1,0 +1,36 @@
+form {
+    text-align: center;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+.form-control {
+    width: 50%;
+    margin: auto;
+}
+
+ul {
+    margin-left: 30%;
+}
+
+@media only screen and (max-width: 400px) {
+    ul {
+        margin-left: 10%;
+    }
+}
+
+.delete-button {
+    height: 20px;
+    width: 40px;
+    margin-top: -3px;
+    cursor: pointer;
+    opacity: 0.7;
+    transform: .5s;
+}
+
+.delete-button:hover {
+    opacity: 1;
+    transition: .5s;
+}

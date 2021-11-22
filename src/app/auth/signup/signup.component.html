@@ -1,0 +1,13 @@
+<app-back-button [url]="'/admin'"></app-back-button>
+
+<ngb-alert *ngIf="error != ''" type="danger" (closed)="onClose()">{{ error }}</ngb-alert>
+
+<app-spinner *ngIf="isLoading"></app-spinner>
+
+<form (ngSubmit)="onSignUp(singupForm)" #singupForm="ngForm">
+    <label>E-mail</label><br>
+    <input class="form-control" type="text" ngModel name="email" required><br><br>
+    <label>Parool</label><br>
+    <input class="form-control" type="password" ngModel name="password" required><br><br>
+    <button class="main-button">Registreeru</button>
+</form>

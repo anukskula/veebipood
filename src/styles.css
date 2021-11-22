@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+	margin: 0;
+}
+
+.main-button {
+    border: none;
+    padding: 10px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.main-button:hover {
+    background-color: rgb(52, 89, 90);
+    transition: 0.5s;
+}
+
+.item:hover .main-button.add-to-cart {
+    display: block;
+}
+
+form {
+    text-align: center;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+.form-control {
+    width: 50%;
+    margin: auto;
+}
+
+input[type="checkbox"] {
+    height: 20px;
+}

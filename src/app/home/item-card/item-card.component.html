@@ -1,0 +1,10 @@
+    <button (click)="onItemActiveChange()" *ngIf="isLoggedIn">
+        <span *ngIf="!item.isActive">Aktiivseks</span>
+        <span *ngIf="item.isActive">Mitte aktiivseks</span>
+    </button>
+    <div routerLink="toode/{{ item.title }}">
+        <img src="{{ item.imgSrc }}" alt="">
+    <div class="item-title">{{ item.title | shortenTitle }}</div><br>
+    <span class="item-price"> {{ item.price | itemPrice }}</span><br><br>
+    </div>
+    <button (click)="onAddToCart(item)" class="main-button add-to-cart">Lisa ostukorvi</button><br><br>

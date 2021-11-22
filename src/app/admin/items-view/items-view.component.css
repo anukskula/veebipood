@@ -1,0 +1,14 @@
+.item {
+    margin: 0 10%;
+    border: 1px solid gray;
+    padding: 5px;
+    display: flex;
+}
+
+.item-buttons {
+    margin-left: 50px;
+}
+
+.item-buttons button {
+    margin: 10px;
+}

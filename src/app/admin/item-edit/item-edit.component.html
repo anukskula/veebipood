@@ -1,0 +1,18 @@
+<app-back-button [url]="'/admin/vaata-esemeid'"></app-back-button>
+
+<form *ngIf="editItemForm" (ngSubmit)="onSubmit()" [formGroup]="editItemForm">
+    <label>Pilt</label><br>
+    <input class="form-control" formControlName="imgSrc" type="text" placeholder="Eseme pilt" required><br>
+    <label>Nimetus</label><br>
+    <input class="form-control" formControlName="title" type="text" placeholder="Eseme nimetus" required><br>
+    <label>Hind</label><br>
+    <input class="form-control" formControlName="price" type="number" placeholder="Eseme hind" required><br>
+    <label>Kategooria</label><br>
+    <!-- <input formControlName="category" type="text" placeholder="Eseme kategooria" required><br>-->
+    <select class="form-control" formControlName="category" required>
+        <option *ngFor="let category of categories" value="{{category}}">{{category}}</option>
+    </select><br><br>
+    <input formControlName="isActive" type="checkbox" id="isActive">
+    <label for="isActive">Toode aktiivne</label><br><br>
+    <button class="main-button" [disabled]="editItemForm.invalid">Muuda ese</button>
+</form>

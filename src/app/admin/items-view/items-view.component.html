@@ -1,0 +1,23 @@
+<button routerLink="/admin">Tagasi</button>
+
+<br><br>
+
+<!-- <button (click)="onSendItemsToDatabase()">Salvesta tooted andmebaasi</button> -->
+
+<br><br>
+
+<div class="items-wrapper">
+    <div class="item" *ngFor="let item of items">
+        <div class="item-info">
+            <div>{{ item.imgSrc}}</div>
+            <div>{{ item.title}}</div>
+            <div>{{ item.price}}</div>
+            <div>{{ item.category}}</div>
+        </div>
+       <div class="item-buttons">
+            <button (click)="onDeleteItem(item)" class="main-button">Kustuta</button>
+            <button routerLink="/admin/muuda-eset/{{item.title}}" class="main-button">Muuda</button>
+       </div>
+        <br>
+    </div>
+</div>

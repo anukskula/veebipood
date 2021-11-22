@@ -1,0 +1,17 @@
+<button routerLink="/admin" class="main-button">Tagasi</button>
+
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <label>Kategooria</label><br>
+    <input class="form-control" ngModel name="category" type="text" placeholder="Kategooria nimetus" required><br>
+    <button class="main-button" [disabled]="form.invalid">Lisa kategooria</button>
+</form>
+
+<br><br>
+
+<ul>
+    <li *ngFor="let category of categories">
+        <span>{{ category }}</span>
+        <img class="delete-button" (click)="onDeleteCategory(category)" src="assets/bin.svg">
+        <br><br>
+    </li>
+</ul>

@@ -1,0 +1,17 @@
+<app-back-button [url]="'/admin'"></app-back-button>
+
+<form (ngSubmit)="onSubmit(addItemForm)" #addItemForm="ngForm">
+    <label>Pilt</label><br>
+    <input class="form-control" ngModel name="imgSrc" type="text" placeholder="Eseme pilt" required><br>
+    <label>Nimetus</label><br>
+    <input class="form-control" ngModel name="title" type="text" placeholder="Eseme nimetus" required><br>
+    <label>Hind</label><br>
+    <input class="form-control" ngModel name="price" type="number" placeholder="Eseme hind" required><br>
+    <label>Kategooria</label><br>
+  <!-- <input ngModel name="category" type="text" placeholder="Eseme kategooria" required><br> -->
+    <select class="form-control" name="category" ngModel required>
+        <option disabled selected value="">Vali kategooria</option>
+        <option *ngFor="let category of categories" value="{{category}}">{{category}}</option>
+    </select><br>
+    <button class="main-button" [disabled]="addItemForm.invalid">Lisa ese</button>
+</form>

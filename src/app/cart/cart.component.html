@@ -1,0 +1,22 @@
+<button *ngIf="itemsInCart.length > 0" (click)="onEmptyCart()" class="main-button">Tühjenda ostukorv</button>
+<div class="count-cart" *ngIf="itemsCount == 1">Ostukorvis on 1 ese</div>
+<div class="count-cart" *ngIf="itemsCount > 1">Ostukorvis on {{ itemsCount }} eset</div>
+
+<div *ngIf="itemsInCart.length == 0">Ostukorv on tühi :(</div>
+
+<div class="items-wrapper">
+    <div class="item" *ngFor="let item of itemsInCart">
+        <img class="item-image" src="{{ item.cartItem.imgSrc }}" alt="">
+        <div class="item-title">{{ item.cartItem.title }}</div><br>
+        <span class="item-price"> {{ item.cartItem.price | itemPrice }}</span><br><br>
+        <div class="cart-buttons">
+            <span (click)="onRemoveOneFromCart(item)"><img src="assets/minus.svg"></span>
+            <div>{{ item.quantity }} tk</div>
+            <span (click)="onAddToCart(item.cartItem)"><img src="assets/add.svg"></span>
+        </div>
+        <div class="item-price">{{ item.cartItem.price * item.quantity | itemPrice }}</div><br>
+        <img class="delete-from-cart-button" (click)="onRemoveFromCart(item)" src="assets/bin.svg">
+    </div>
+</div>
+
+<div class="sum-of-cart" *ngIf="itemsInCart.length > 0">KOKKU: {{ sumOfCart | itemPrice }}</div>

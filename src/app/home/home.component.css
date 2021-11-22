@@ -1,0 +1,34 @@
+.item {
+    width: 100%;
+    height: 360px;
+}
+
+.active {
+    border: 1px solid green;
+}
+
+.inactive {
+    border: 1px solid red;
+}
+
+.filter-bar {
+    align-items: center;
+    background-color: #f2f2f2;
+    display: flex;
+    font-size: 12px;
+    height: 40px;
+    margin: 10px 10%;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.filter-bar-sort {
+    display: flex;
+}
+
+.items-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    grid-column-start: 1;
+    grid-column-start: 3;
+}
